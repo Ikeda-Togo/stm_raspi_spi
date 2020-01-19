@@ -7,8 +7,10 @@
 * NSSは使わない
 * GPIOをNcleoのNSS
 
-g++ raspi_spi.cpp -lwiringPi -o spitest
----
+~~~
+$ g++ raspi_spi.cpp -lwiringPi -o spitest
+$ ./spitest
+~~~
 
 
 ### Nucleo(slave)
