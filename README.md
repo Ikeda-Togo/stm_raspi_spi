@@ -7,5 +7,9 @@
 * NSSは使わない
 * GPIOをNcleoのNSS
 
+g++ raspi_spi.cpp -lwiringPi -o spitest
+---
+
+
 ### Nucleo(slave)
 * NSSをinputで設定する（詳しくはsetting参照）
