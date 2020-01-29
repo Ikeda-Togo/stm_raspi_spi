@@ -67,14 +67,12 @@ while 1:
     if az==0:
         az=0.000001
     
-    flag.flag_get(ay,ax)
+    pitch=flag.flag_get(ax,ay,az)
 
     #print ('{0:4.3f},   {1:4.3f},    {2:4.3f},     {3:4.3f},      {4:4.3f},      {5:4.3f},' .format(gx, gy, gz, ax, ay, az))
     roll = math.atan(ay/az) * 57.324
-    pitch = math.atan(ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
-
-    #pitch = math.atan(-ax / (ay*math.sin(roll) + az*math.cos(roll)))
 
     print('{0:4.3f},   x{1:4.3f},  y{2:4.3f}'.format(pitch, ax,ay))
+
 
 
