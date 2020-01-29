@@ -3,6 +3,7 @@
 import smbus
 import math
 from time import sleep
+import flag
 
 DEV_ADDR = 0x68
 
@@ -65,17 +66,9 @@ while 1:
         ay=0.000001
     if az==0:
         az=0.000001
+    
+    flag.flag_get(ay,ax)
 
-    if -1<ax<0 & 0<ay<1:
-        ax=-ax
-    if -1<ax<0 & -1<ay<0:
-        print("----2----")
-        ax=2-ax
-    if 0<ax<1 & -1<ay<0:
-
-        ax=2+ax
-    if 0<ax<1 & 0<ay<1:
-        ax=4-ax
     #print ('{0:4.3f},   {1:4.3f},    {2:4.3f},     {3:4.3f},      {4:4.3f},      {5:4.3f},' .format(gx, gy, gz, ax, ay, az))
     roll = math.atan(ay/az) * 57.324
     pitch = math.atan(ax / math.sqrt( ay* ay+ az*az ) ) * 57.324
